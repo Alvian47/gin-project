@@ -1,0 +1,42 @@
+{{define "navbar.html"}}
+
+<nav class="navbar is-light" role="navigation" aria-label="main navigation">
+	<div class="container">
+  <div class="navbar-brand">
+    <a class="navbar-item" href="/">
+      <img src="/assets/logo.png" style="max-height: 2.50rem;">
+    </a>
+
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+
+  <div id="navbarBasicExample" class="navbar-menu">
+    <div class="navbar-end">
+      <div class="navbar-item">
+      	{{if .user}}
+      	<div class="buttons">
+          <a class="button is-primary" href="/private/dashboard">
+            <strong>{{.user}}</strong>
+          </a>
+          <a class="button" href="/private/log">
+            Log out
+          </a>
+        </div>
+        {{else}}
+        <div class="buttons">
+          <a class="button is-primary" href="/public/login">
+            <strong>Log in</strong>
+          </a>
+        </div>
+        {{end}}
+      </div>
+    </div>
+  </div>
+  </div>
+</nav>
+
+{{end}}
